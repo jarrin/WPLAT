@@ -1,0 +1,4 @@
+path: wp
+server:
+  port: 8000
+  host: wp.localhost

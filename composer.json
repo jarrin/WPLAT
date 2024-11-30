@@ -1,0 +1,49 @@
+{
+  "name": "jarrin/wplat",
+  "description": "WordPress, Laravel, Acorn, Twig project setup",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "WPLAT\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jarrin van der Velden",
+      "email": "j@rrin.nl"
+    }
+  ],
+  "repositories":[
+    {
+      "type":"composer",
+      "url":"https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    },
+    {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    }
+  ],
+  "extra": {
+    "wordpress-install-dir": "wp",
+    "installer-paths": {
+      "wp/wp-content/mu-plugins/{$name}/": [
+        "wpengine/advanced-custom-fields-pro"
+      ],
+      "wp/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "require": {
+    "roots/wordpress": "^6.7"
+  },
+  "config": {
+    "allow-plugins": {
+      "roots/wordpress-core-installer": true
+    }
+  }
+}
